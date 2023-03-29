@@ -3,8 +3,6 @@
 	import '../app.css';
 	import bgimg from '$lib/images/bg.webp';
 	import bgimg_fallback from '$lib/images/bg.jpg';
-	/** @type {import('./$types').LayoutData} */
-	export let data;
 </script>
 
 <div class="app">
