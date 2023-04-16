@@ -1,12 +1,8 @@
-import { error, redirect } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit';
 import { serializeNonPOJOs } from '$lib/utils';
 
 export const load = ({ locals }) => {
-	if (!locals.pb.authStore.isValid) {
-		throw redirect(303, '/login');
-	}
-
-	const getUsersProjects = async () => {
+	const getBlogs = async () => {
 		try {
 			const projects = serializeNonPOJOs(await locals.pb.collection('blog').getFullList());
 			return projects;
@@ -17,6 +13,6 @@ export const load = ({ locals }) => {
 	};
 
 	return {
-		projects: getUsersProjects(locals.user.id)
+		projects: getBlogs()
 	};
 };
