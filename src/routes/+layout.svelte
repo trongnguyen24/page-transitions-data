@@ -2,9 +2,7 @@
 	import Header from './Header.svelte';
 	import '../app.css';
 	import bgimg from '$lib/images/bg.webp';
-	import PageTransition from '$lib/PageTransition.svelte';
 	import bgimg_fallback from '$lib/images/bg.jpg';
-	export let data;
 </script>
 
 <div class="app">
@@ -23,9 +21,7 @@
 		</div>
 
 		<main class="w-full grow mx-auto z-10 pt-28">
-			<PageTransition pathname={data.pathname}>
-				<slot />
-			</PageTransition>
+			<slot />
 		</main>
 	</div>
 </div>
